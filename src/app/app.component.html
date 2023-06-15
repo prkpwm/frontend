@@ -34,6 +34,14 @@
       <input type="text" [(ngModel)]="shortUrl" (keydown)="originalUrl=''" placeholder="Enter Shorten Url" />
       <button type="submit" (click)="search()">Search</button>
 
+      <small *ngIf="answer" >
+
+        URL Shortener :  
+        <div>
+          <a href="{{answer}}" target="_self">{{answer}}</a>
+        </div>
+      </small>
+
     </div>
 
   </div>
@@ -46,7 +54,6 @@
   <p>
 </footer>
 
-<!-- if waiting loading  -->
 <div class="loading" *ngIf="waiting">
   <div class="loading__container">
     <div class="loading__circle"></div>
